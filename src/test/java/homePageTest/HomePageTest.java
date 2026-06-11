@@ -24,7 +24,7 @@ public class HomePageTest {
 
         WebElement alloLogoLocator = driver.findElement(By.xpath("//a[@class='v-logo']"));
 
-        Assert.assertTrue(alloLogoLocator.isDisplayed());
+        Assert.assertTrue(alloLogoLocator.isDisplayed(), "Allo logo is visible");
 
         driver.quit();
 
