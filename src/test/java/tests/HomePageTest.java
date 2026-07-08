@@ -12,15 +12,14 @@ public class HomePageTest extends TestInit {
 
     @Test
     public void checkAlloLogoDisplay() {
-
         HomePage homePage = new HomePage(driver);
+        
         openUrl(alloUrl);
         Assert.assertTrue(homePage.alloLogo().isDisplayed());
     }
 
     @Test
     public void searchHairdryerTest() {
-
         HomePage homePage = new HomePage(driver);
         SearchResultPage searchResultPage = new SearchResultPage(driver);
 
