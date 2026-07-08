@@ -3,6 +3,7 @@ package tests;
 import basesClass.TestInit;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.GoodsPage;
 import pages.HomePage;
 import pages.SearchResultPage;
 
@@ -27,5 +28,28 @@ public class HomePageTest extends TestInit {
         homePage.clickSearchButton();
 
         Assert.assertTrue(searchResultPage.firstGoods().getText().contains(hairdryer), "First product does not contain 'Фен'");
+    }
+
+    @Test
+    public void airPodsTest() {
+        HomePage homePage = new HomePage(driver);
+        SearchResultPage searchResultPage = new SearchResultPage(driver);
+        GoodsPage goodsPage = new GoodsPage(driver);
+
+        String airPods = "AirPods 4";
+
+        homePage.alloLogoDisplayed();
+        homePage.enterValuesInSearchField(airPods);
+        homePage.clickSearchButton();
+
+        String expectedNameFirstAirPods = searchResultPage.getNameFirstGoods();
+        System.out.println(expectedNameFirstAirPods + "  очікуваний результат");
+        Assert.assertTrue(expectedNameFirstAirPods.contains(airPods));
+
+        searchResultPage.clickFirstProduct();
+
+        String actualNameAirPods = goodsPage.getNameGoods();
+        System.out.println(actualNameAirPods + "  Фактичний результат");
+        Assert.assertEquals(actualNameAirPods, expectedNameFirstAirPods);
     }
 }
