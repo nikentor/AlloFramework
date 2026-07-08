@@ -11,8 +11,26 @@ public class HomePage extends BasePage {
     }
 
     private final String ALLO_LOGO = "//a[@class='v-logo']";
+    private final String SEARCH_FIELD = "//input[@id='search-form__input']";
+    private final String SEARCH_BUTTON = "//span[@class='search-form__submit-button-text']";
 
     public WebElement alloLogo() {
         return visibilityOfElementByXpath(ALLO_LOGO);
+    }
+
+    public WebElement searchField() {
+        return visibilityOfElementByXpath(SEARCH_FIELD);
+    }
+
+    public WebElement searchButton() {
+        return visibilityOfElementByXpath(SEARCH_BUTTON);
+    }
+
+    public void enterValuesInSearchField(String value) {
+        searchField().sendKeys(value);
+    }
+
+    public void clickSearchButton() {
+        searchButton().click();
     }
 }
