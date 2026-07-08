@@ -15,6 +15,7 @@ public class GoodsPage extends BasePage {
     public WebElement firstGoodsTitle() {
         return visibilityOfElementByXpath(GOODS_TITLE);
     }
+
     public String getNameGoods() {
         return firstGoodsTitle().getText();
     }
