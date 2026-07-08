@@ -8,13 +8,10 @@ import pages.SearchResultPage;
 
 public class HomePageTest extends TestInit {
 
-    public String alloUrl = "https://allo.ua/";
-
     @Test
     public void checkAlloLogoDisplay() {
         HomePage homePage = new HomePage(driver);
-        
-        openUrl(alloUrl);
+
         Assert.assertTrue(homePage.alloLogo().isDisplayed());
     }
 
@@ -24,8 +21,6 @@ public class HomePageTest extends TestInit {
         SearchResultPage searchResultPage = new SearchResultPage(driver);
 
         String hairdryer = "Фен";
-
-        openUrl(alloUrl);
 
         Assert.assertTrue(homePage.searchField().isDisplayed());
         homePage.enterValuesInSearchField(hairdryer);

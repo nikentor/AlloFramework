@@ -9,12 +9,14 @@ import org.testng.annotations.BeforeMethod;
 public class TestInit {
 
     public WebDriver driver;
+    public String alloUrl = "https://allo.ua/";
 
     @BeforeMethod
     public void openBrowser() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        openUrl(alloUrl);
     }
 
     @AfterMethod
