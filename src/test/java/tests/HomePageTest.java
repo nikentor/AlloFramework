@@ -13,7 +13,7 @@ public class HomePageTest extends TestInit {
     public void checkAlloLogoDisplay() {
         HomePage homePage = new HomePage(driver);
 
-        Assert.assertTrue(homePage.alloLogo().isDisplayed());
+        Assert.assertTrue(homePage.alloLogoDisplayed());
     }
 
     @Test
