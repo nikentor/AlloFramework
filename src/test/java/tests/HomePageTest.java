@@ -23,7 +23,7 @@ public class HomePageTest extends TestInit {
 
         String hairdryer = "Фен";
 
-        homePage.searchFieldDisplayed();
+        Assert.assertTrue(homePage.searchFieldDisplayed());
         homePage.enterValuesInSearchField(hairdryer);
         homePage.clickSearchButton();
 
@@ -38,7 +38,7 @@ public class HomePageTest extends TestInit {
 
         String airPods = "AirPods 4";
 
-        homePage.alloLogoDisplayed();
+        Assert.assertTrue(homePage.alloLogoDisplayed());
         homePage.enterValuesInSearchField(airPods);
         homePage.clickSearchButton();
 
