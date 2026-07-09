@@ -13,7 +13,7 @@ public class HomePageTest extends TestInit {
     public void checkAlloLogoDisplay() {
         HomePage homePage = new HomePage(driver);
 
-        Assert.assertTrue(homePage.alloLogo().isDisplayed());
+        homePage.alloLogoDisplayed();
     }
 
     @Test
@@ -43,13 +43,11 @@ public class HomePageTest extends TestInit {
         homePage.clickSearchButton();
 
         String expectedNameFirstAirPods = searchResultPage.getNameFirstGoods();
-        System.out.println(expectedNameFirstAirPods + "  очікуваний результат");
         Assert.assertTrue(expectedNameFirstAirPods.contains(airPods));
 
         searchResultPage.clickFirstProduct();
 
         String actualNameAirPods = goodsPage.getNameGoods();
-        System.out.println(actualNameAirPods + "  Фактичний результат");
         Assert.assertEquals(actualNameAirPods, expectedNameFirstAirPods);
     }
 }
