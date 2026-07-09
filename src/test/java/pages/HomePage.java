@@ -16,6 +16,9 @@ public class HomePage extends BasePage {
     private final String CITY_LABEL = "//span[@class='mh-loc__label']";
     private final String DNIPRO_BUTTON = "//a[@data-geo-select-city='Дніпро']";
     private final String CHOOSE_CITY_TEXT = "//h3[@class='geo__title']";
+    private final String BUYERS_BUTTON = "//a[@class='mh-button mh-button--open']";
+    private final String DROPDOWN_MENU = "//div[@class='mh-button__dropdown']";
+    private final String SHIPMENT_PAYMENT = "//div[@class='mh-button__dropdown']//a[@href='https://allo.ua/ua/help/shipment_payment/']";
 
     public WebElement alloLogo() {
         return visibilityOfElementByXpath(ALLO_LOGO);
@@ -45,12 +48,36 @@ public class HomePage extends BasePage {
         return visibilityOfElementByXpath(CITY_LABEL);
     }
 
+    public WebElement buyersButton() {
+        return visibilityOfElementByXpath(BUYERS_BUTTON);
+    }
+
+    public WebElement dropDownMenu() {
+        return visibilityOfElementByXpath(DROPDOWN_MENU);
+    }
+
+    public WebElement shipmentPayment() {
+        return visibilityOfElementByXpath(SHIPMENT_PAYMENT);
+    }
+
     public boolean alloLogoDisplayed() {
         return alloLogo().isDisplayed();
     }
 
     public boolean searchFieldDisplayed() {
         return searchField().isDisplayed();
+    }
+
+    public boolean buyersButtonDisplayed() {
+        return buyersButton().isDisplayed();
+    }
+
+    public boolean dropDownMenuDisplayed() {
+        return dropDownMenu().isDisplayed();
+    }
+
+    public boolean shipmentPaymentDisplayed() {
+        return shipmentPayment().isDisplayed();
     }
 
     public void enterValuesInSearchField(String value) {
@@ -71,5 +98,13 @@ public class HomePage extends BasePage {
 
     public void clickDniproButton() {
         dniproButton().click();
+    }
+
+    public void clickBuyersButton() {
+        buyersButton().click();
+    }
+
+    public void clickShipmentPayment() {
+        shipmentPayment().click();
     }
 }

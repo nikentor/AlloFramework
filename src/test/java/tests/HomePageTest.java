@@ -3,6 +3,7 @@ package tests;
 import basesClass.TestInit;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.DeliveryAndPaymentPage;
 import pages.GoodsPage;
 import pages.HomePage;
 import pages.SearchResultPage;
@@ -64,5 +65,24 @@ public class HomePageTest extends TestInit {
         Assert.assertTrue(homePage.alloLogoDisplayed());
 
         Assert.assertEquals(homePage.cityName().getText(), "Дніпро");
+    }
+
+    @Test
+    public void customerMenuTest() {
+        HomePage homePage = new HomePage(driver);
+        DeliveryAndPaymentPage deliveryAndPaymentPage = new DeliveryAndPaymentPage(driver);
+
+        Assert.assertTrue(homePage.buyersButtonDisplayed());
+        homePage.clickBuyersButton();
+
+        Assert.assertTrue(homePage.dropDownMenuDisplayed());
+
+        Assert.assertTrue(homePage.shipmentPaymentDisplayed());
+        homePage.clickShipmentPayment();
+
+        Assert.assertTrue(deliveryAndPaymentPage.pageTitleContains("Доставка і оплата"));
+
+        Assert.assertTrue(deliveryAndPaymentPage.howToOrderDisplayed());
+        Assert.assertEquals(deliveryAndPaymentPage.howToOrderText(), "Як оформити замовлення?");
     }
 }
