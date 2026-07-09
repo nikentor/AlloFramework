@@ -13,7 +13,7 @@ public class HomePageTest extends TestInit {
     public void checkAlloLogoDisplay() {
         HomePage homePage = new HomePage(driver);
 
-        homePage.alloLogoDisplayed();
+        Assert.assertTrue(homePage.alloLogo().isDisplayed());
     }
 
     @Test
@@ -23,7 +23,7 @@ public class HomePageTest extends TestInit {
 
         String hairdryer = "Фен";
 
-        Assert.assertTrue(homePage.searchField().isDisplayed());
+        homePage.searchFieldDisplayed();
         homePage.enterValuesInSearchField(hairdryer);
         homePage.clickSearchButton();
 

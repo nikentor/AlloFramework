@@ -26,8 +26,12 @@ public class HomePage extends BasePage {
         return visibilityOfElementByXpath(SEARCH_BUTTON);
     }
 
-    public void alloLogoDisplayed() {
-        alloLogo().isDisplayed();
+    public boolean alloLogoDisplayed() {
+        return alloLogo().isDisplayed();
+    }
+
+    public boolean searchFieldDisplayed() {
+        return searchField().isDisplayed();
     }
 
     public void enterValuesInSearchField(String value) {
