@@ -50,4 +50,19 @@ public class HomePageTest extends TestInit {
         String actualNameAirPods = goodsPage.getNameGoods();
         Assert.assertEquals(actualNameAirPods, expectedNameFirstAirPods);
     }
+
+    @Test
+    public void changeCityToDniproTest() {
+        HomePage homePage = new HomePage(driver);
+
+        Assert.assertTrue(homePage.alloLogoDisplayed());
+
+        homePage.clickCityButton();
+        Assert.assertTrue(homePage.chooseCityDisplayed());
+
+        homePage.clickDniproButton();
+        Assert.assertTrue(homePage.alloLogoDisplayed());
+
+        Assert.assertEquals(homePage.cityName().getText(), "Дніпро");
+    }
 }
