@@ -28,6 +28,10 @@ public class TestInit {
 
         driver.manage().window().maximize();
         openUrl(alloUrl);
+
+        System.out.println("URL: " + driver.getCurrentUrl());
+        System.out.println("TITLE: " + driver.getTitle());
+        System.out.println("SOURCE LENGTH: " + driver.getPageSource().length());
     }
 
     @AfterMethod
