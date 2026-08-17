@@ -10,9 +10,12 @@ import pages.DeliveryAndPaymentPage;
 import pages.GoodsPage;
 import pages.HomePage;
 import pages.SearchResultPage;
+import listeners.ScreenshotListener;
+import org.testng.annotations.Listeners;
 
 import static io.restassured.RestAssured.given;
 
+@Listeners(ScreenshotListener.class)
 public class HomePageTest extends TestInit {
 
     @Test
@@ -20,6 +23,10 @@ public class HomePageTest extends TestInit {
         HomePage homePage = new HomePage(driver);
 
         Assert.assertTrue(homePage.alloLogoDisplayed());
+    }
+    @Test
+    public void screenshotTest() {
+        Assert.assertTrue(false, "Test failure for screenshot");
     }
 
     @Test
