@@ -24,10 +24,6 @@ public class HomePageTest extends TestInit {
 
         Assert.assertTrue(homePage.alloLogoDisplayed());
     }
-    @Test
-    public void screenshotTest() {
-        Assert.assertTrue(false, "Test failure for screenshot");
-    }
 
     @Test
     public void searchHairdryerTest() {
