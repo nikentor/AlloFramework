@@ -12,16 +12,18 @@ public class TestInit {
     public WebDriver driver;
     public String alloUrl = "https://allo.ua/";
 
+
     @BeforeMethod
     public void openBrowser() {
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
 
-        if (System.getenv("CI") != null) {
+        if ("true".equals(System.getenv("CI"))) {
             options.addArguments("--headless=new");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--window-size=1920,1080");
         }
 
         driver = new ChromeDriver(options);
@@ -37,5 +39,9 @@ public class TestInit {
 
     public void openUrl(String url) {
         driver.get(url);
+
+        System.out.println("CI = " + System.getenv("CI"));
+        System.out.println("URL = " + driver.getCurrentUrl());
+        System.out.println("TITLE = " + driver.getTitle());
     }
 }
