@@ -20,7 +20,7 @@ jobs:
           cache: maven
 
       - name: Run tests
-        run: mvn clean test
+        run: '& "C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.3.7.1\plugins\maven\lib\maven3\bin\mvn.cmd" clean test'
 
       - name: Upload Allure results
         if: always()
