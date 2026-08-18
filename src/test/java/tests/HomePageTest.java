@@ -1,13 +1,21 @@
 package tests;
 
 import basesClass.TestInit;
+import dto.response.RspCreateUserDTO;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.DeliveryAndPaymentPage;
 import pages.GoodsPage;
 import pages.HomePage;
 import pages.SearchResultPage;
+import listeners.ScreenshotListener;
+import org.testng.annotations.Listeners;
 
+import static io.restassured.RestAssured.given;
+
+@Listeners(ScreenshotListener.class)
 public class HomePageTest extends TestInit {
 
     @Test

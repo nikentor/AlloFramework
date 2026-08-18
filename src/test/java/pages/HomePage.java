@@ -21,14 +21,17 @@ public class HomePage extends BasePage {
     private final String SHIPMENT_PAYMENT = "//div[@class='mh-button__dropdown']//a[@href='https://allo.ua/ua/help/shipment_payment/']";
 
     public WebElement alloLogo() {
+
         return visibilityOfElementByXpath(ALLO_LOGO);
     }
 
     public WebElement searchField() {
+
         return visibilityOfElementByXpath(SEARCH_FIELD);
     }
 
     public WebElement searchButton() {
+
         return visibilityOfElementByXpath(SEARCH_BUTTON);
     }
 
